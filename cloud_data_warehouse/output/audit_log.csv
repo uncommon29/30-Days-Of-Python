@@ -1,0 +1,4 @@
+run_id,table_name,rows_processed,rows_loaded,status,start_time,end_time,error_message
+8fd9187a,dim_customer,500,500,SUCCESS,2026-09-14 07:20:45.478421,2026-09-14 07:20:45.713271,
+8fd9187a,dim_product,100,100,SUCCESS,2026-09-14 07:20:45.478421,2026-09-14 07:20:45.715369,
+8fd9187a,fact_sales,5000,5000,SUCCESS,2026-09-14 07:20:45.478421,2026-09-14 07:20:45.720008,
