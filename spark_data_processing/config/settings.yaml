@@ -1,0 +1,83 @@
+# Spark Data Processing Configuration
+
+spark:
+  app_name: "EcommerceDataProcessing"
+  master: "local[*]"
+  driver_memory: "2g"
+  executor_memory: "2g"
+  sql_shuffle_partitions: 200
+  sql_adaptive_enabled: true
+
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  output_path: "data/output"
+  num_records: 10000
+  seed: 42
+
+processing:
+  # Customer segmentation thresholds
+  rfm_segments:
+    platinum:
+      recency_days: 30
+      frequency_min: 10
+      monetary_min: 1000
+    gold:
+      recency_days: 60
+      frequency_min: 5
+      monetary_min: 500
+    silver:
+      recency_days: 90
+      frequency_min: 2
+      monetary_min: 100
+    bronze:
+      recency_days: 365
+      frequency_min: 1
+      monetary_min: 0
+  
+  # Moving average windows
+  moving_avg_windows:
+    - 7
+    - 30
+  
+  # Data quality thresholds
+  quality:
+    max_null_percentage: 5.0
+    min_price: 0.01
+    max_price: 10000.0
+    min_quantity: 1
+    max_quantity: 100
+
+categories:
+  - Electronics
+  - Clothing
+  - Home & Garden
+  - Sports & Outdoors
+  - Books
+  - Beauty & Health
+  - Toys & Games
+  - Food & Beverages
+
+regions:
+  - North
+  - South
+  - East
+  - West
+  - Central
+
+payment_methods:
+  - Credit Card
+  - Debit Card
+  - PayPal
+  - Bank Transfer
+  - Cash on Delivery
+
+output_formats:
+  - parquet
+  - csv
+  - json
+
+logging:
+  level: INFO
+  file: logs/spark_pipeline.log
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
