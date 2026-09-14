@@ -1,0 +1,36 @@
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic:
+    raw: "stock-ticks-raw"
+    processed: "stock-ticks-processed"
+    alerts: "stock-alerts"
+  
+producer:
+  interval_seconds: 1
+  stocks:
+    - symbol: "AAPL"
+      base_price: 175.0
+      volatility: 0.02
+    - symbol: "GOOGL"
+      base_price: 140.0
+      volatility: 0.025
+    - symbol: "MSFT"
+      base_price: 330.0
+      volatility: 0.018
+    - symbol: "AMZN"
+      base_price: 145.0
+      volatility: 0.022
+    - symbol: "TSLA"
+      base_price: 250.0
+      volatility: 0.035
+
+consumer:
+  group_id: "stock-processing-group"
+  auto_offset_reset: "earliest"
+  processing:
+    window_size_seconds: 10
+    anomaly_threshold: 0.05  # 5% price change triggers alert
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
