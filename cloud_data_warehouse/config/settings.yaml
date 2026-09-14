@@ -1,0 +1,44 @@
+warehouse:
+  name: "analytics_dw"
+  layers:
+    bronze: "../data/bronze"
+    silver: "../data/silver"
+    gold: "../output"
+
+sources:
+  customers:
+    type: "api"
+    endpoint: "simulated_customers"
+    format: "json"
+  
+  products:
+    type: "file"
+    path: "simulated_products.csv"
+    format: "csv"
+    
+  sales:
+    type: "stream"
+    endpoint: "simulated_sales"
+    format: "json"
+
+dimensions:
+  customer:
+    table: "dim_customer"
+    keys: ["customer_id"]
+    scd_type: 2
+    
+  product:
+    table: "dim_product"
+    keys: ["product_id"]
+    scd_type: 1
+
+facts:
+  sales:
+    table: "fact_sales"
+    grain: "transaction_id"
+    measures: ["amount", "quantity", "discount"]
+
+quality_rules:
+  null_check: true
+  duplicate_check: true
+  referential_integrity: true

@@ -1,0 +1,51 @@
+# ETL Pipeline Configuration
+
+# Data paths
+paths:
+  raw_data: "data/raw/iris_raw.csv"
+  processed_data: "data/processed/iris_processed.csv"
+  output_csv: "data/output/iris_final.csv"
+  output_json: "data/output/iris_summary.json"
+
+# Extraction settings
+extraction:
+  dataset_name: "iris"
+  seed: 42
+
+# Transformation settings
+transformation:
+  # Features to normalize
+  normalize_columns:
+    - "sepal_length"
+    - "sepal_width"
+    - "petal_length"
+    - "petal_width"
+  
+  # Derived features to create
+  create_features:
+    - "petal_ratio"  # petal_length / petal_width
+    - "sepal_area"   # sepal_length * sepal_width
+  
+  # Handle missing values
+  handle_missing:
+    strategy: "mean"  # Options: mean, median, drop
+  
+  # Encode categorical variables
+  encode_categorical:
+    column: "species"
+    method: "label"  # Options: label, onehot
+
+# Load settings
+load:
+  formats:
+    - "csv"
+    - "json"
+  
+  # Create summary statistics grouped by
+  summary_group_by: "species"
+
+# Logging settings
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_file: "logs/etl_pipeline.log"

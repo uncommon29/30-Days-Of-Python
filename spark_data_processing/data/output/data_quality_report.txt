@@ -1,0 +1,43 @@
+============================================================
+DATA QUALITY REPORT
+============================================================
+Generated: 2026-09-14T07:00:43.832098
+Total Records: 10000
+Duplicate Count: 0
+Overall Status: PASSED
+
+------------------------------------------------------------
+QUALITY CHECKS
+------------------------------------------------------------
+[PASSED] null_transaction_id: Null percentage (0.00%) within threshold
+[PASSED] null_customer_id: Null percentage (0.00%) within threshold
+[PASSED] null_product_id: Null percentage (0.00%) within threshold
+[PASSED] null_timestamp: Null percentage (0.00%) within threshold
+[PASSED] null_date: Null percentage (0.00%) within threshold
+[PASSED] null_quantity: Null percentage (0.00%) within threshold
+[PASSED] null_price: Null percentage (0.00%) within threshold
+[PASSED] null_discount: Null percentage (0.00%) within threshold
+[PASSED] null_final_amount: Null percentage (0.00%) within threshold
+[PASSED] null_category: Null percentage (0.00%) within threshold
+[PASSED] null_region: Null percentage (0.00%) within threshold
+[PASSED] null_payment_method: Null percentage (0.00%) within threshold
+[PASSED] duplicates: No duplicate transactions found
+[PASSED] price_range: All prices within valid range
+[PASSED] quantity_range: All quantities within valid range
+
+------------------------------------------------------------
+NULL VALUE SUMMARY
+------------------------------------------------------------
+transaction_id: 0 nulls (0.00%)
+customer_id: 0 nulls (0.00%)
+product_id: 0 nulls (0.00%)
+timestamp: 0 nulls (0.00%)
+date: 0 nulls (0.00%)
+quantity: 0 nulls (0.00%)
+price: 0 nulls (0.00%)
+discount: 0 nulls (0.00%)
+final_amount: 0 nulls (0.00%)
+category: 0 nulls (0.00%)
+region: 0 nulls (0.00%)
+payment_method: 0 nulls (0.00%)
+============================================================

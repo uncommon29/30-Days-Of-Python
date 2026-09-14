@@ -1,0 +1,96 @@
+2026-09-14 06:59:08,729 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 06:59:08,730 - SparkETLPipeline - INFO - SPARK DATA PROCESSING PIPELINE
+2026-09-14 06:59:08,730 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 06:59:08,730 - SparkETLPipeline - INFO - Start time: 2026-09-14T06:59:08.729155
+2026-09-14 06:59:08,730 - SparkETLPipeline - INFO - Configuration loaded successfully
+2026-09-14 06:59:08,730 - SparkETLPipeline - INFO - 
+Initializing Spark session...
+2026-09-14 06:59:08,730 - SparkETLPipeline - ERROR - 
+Pipeline failed with error: 'Builder' object has no attribute 'conf'
+Traceback (most recent call last):
+  File "/workspace/spark_data_processing/src/main.py", line 90, in run_pipeline
+    spark = create_spark_session(config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/spark_data_processing/src/spark_session.py", line 45, in create_spark_session
+    spark.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
+    ^^^^^^^^^^
+AttributeError: 'Builder' object has no attribute 'conf'
+2026-09-14 06:59:22,367 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 06:59:22,367 - SparkETLPipeline - INFO - SPARK DATA PROCESSING PIPELINE
+2026-09-14 06:59:22,367 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 06:59:22,367 - SparkETLPipeline - INFO - Start time: 2026-09-14T06:59:22.367197
+2026-09-14 06:59:22,367 - SparkETLPipeline - INFO - Configuration loaded successfully
+2026-09-14 06:59:22,368 - SparkETLPipeline - INFO - 
+Initializing Spark session...
+2026-09-14 06:59:35,834 - SparkETLPipeline - INFO - Spark session created: EcommerceDataProcessing
+2026-09-14 06:59:35,834 - SparkETLPipeline - INFO - Spark version: 4.2.0
+2026-09-14 06:59:35,834 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 06:59:35,835 - SparkETLPipeline - INFO - STAGE 1: EXTRACT
+2026-09-14 06:59:35,835 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 06:59:46,999 - SparkETLPipeline - INFO - Extract completed: 10000 records in 11.16s
+2026-09-14 06:59:47,000 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 06:59:47,000 - SparkETLPipeline - INFO - STAGE 2: TRANSFORM
+2026-09-14 06:59:47,000 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:00:01,604 - SparkETLPipeline - ERROR - 
+Pipeline failed with error: name 'countDistinct' is not defined
+Traceback (most recent call last):
+  File "/workspace/spark_data_processing/src/main.py", line 119, in run_pipeline
+    transform_results = transform_data(spark, config)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/spark_data_processing/src/transform.py", line 386, in transform_data
+    product_perf = calculate_product_performance(raw_df)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/spark_data_processing/src/transform.py", line 199, in calculate_product_performance
+    countDistinct('customer_id').alias('unique_customers')
+    ^^^^^^^^^^^^^
+NameError: name 'countDistinct' is not defined
+2026-09-14 07:00:02,543 - SparkETLPipeline - INFO - Spark session stopped
+2026-09-14 07:00:02,544 - py4j.clientserver - INFO - Closing down clientserver connection
+2026-09-14 07:00:13,850 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:00:13,851 - SparkETLPipeline - INFO - SPARK DATA PROCESSING PIPELINE
+2026-09-14 07:00:13,851 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:00:13,851 - SparkETLPipeline - INFO - Start time: 2026-09-14T07:00:13.850636
+2026-09-14 07:00:13,851 - SparkETLPipeline - INFO - Configuration loaded successfully
+2026-09-14 07:00:13,851 - SparkETLPipeline - INFO - 
+Initializing Spark session...
+2026-09-14 07:00:27,916 - SparkETLPipeline - INFO - Spark session created: EcommerceDataProcessing
+2026-09-14 07:00:27,917 - SparkETLPipeline - INFO - Spark version: 4.2.0
+2026-09-14 07:00:27,917 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 07:00:27,917 - SparkETLPipeline - INFO - STAGE 1: EXTRACT
+2026-09-14 07:00:27,917 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:00:39,741 - SparkETLPipeline - INFO - Extract completed: 10000 records in 11.82s
+2026-09-14 07:00:39,742 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 07:00:39,742 - SparkETLPipeline - INFO - STAGE 2: TRANSFORM
+2026-09-14 07:00:39,742 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:01:14,810 - SparkETLPipeline - INFO - Transform completed in 35.07s
+2026-09-14 07:01:14,810 - SparkETLPipeline - INFO - Data quality check: PASSED
+2026-09-14 07:01:14,810 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 07:01:14,810 - SparkETLPipeline - INFO - STAGE 3: LOAD
+2026-09-14 07:01:14,810 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:01:40,024 - SparkETLPipeline - INFO - Load completed in 25.21s
+2026-09-14 07:01:40,024 - SparkETLPipeline - INFO - Output files generated: 7
+2026-09-14 07:01:40,024 - SparkETLPipeline - INFO - 
+============================================================
+2026-09-14 07:01:40,024 - SparkETLPipeline - INFO - PIPELINE COMPLETED SUCCESSFULLY
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - ============================================================
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - Total duration: 86.17 seconds
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - Records processed: 10000
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - Output files: 7
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - 
+Output directory: /workspace/spark_data_processing/data/output
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO - 
+Generated files:
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - customer_segments: /workspace/spark_data_processing/data/output/customer_segments.parquet
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - product_performance: /workspace/spark_data_processing/data/output/product_performance.csv
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - daily_revenue: /workspace/spark_data_processing/data/output/daily_revenue.json
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - category_analytics: /workspace/spark_data_processing/data/output/category_analytics.csv
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - region_analytics: /workspace/spark_data_processing/data/output/region_analytics.csv
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - summary_stats: /workspace/spark_data_processing/data/output/summary_stats.json
+2026-09-14 07:01:40,025 - SparkETLPipeline - INFO -   - quality_report: /workspace/spark_data_processing/data/output/data_quality_report.txt
+2026-09-14 07:01:40,440 - SparkETLPipeline - INFO - Spark session stopped
+2026-09-14 07:01:40,441 - py4j.clientserver - INFO - Closing down clientserver connection

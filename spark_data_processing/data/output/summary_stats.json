@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-09-14T07:01:24.018256",
+  "datasets": {
+    "customer_rfm": {
+      "total_customers": 2455,
+      "segments": {
+        "Platinum": 619,
+        "Silver": 671,
+        "Gold": 774,
+        "Bronze": 391
+      },
+      "avg_recency": 83.80040733197556,
+      "avg_frequency": 4.0733197556008145,
+      "avg_monetary": 4867.362281059062
+    },
+    "product_performance": {
+      "total_products": 3660,
+      "total_revenue": 11949374.400000047,
+      "avg_revenue_per_product": 3264.8563934426356
+    },
+    "daily_revenue": {
+      "total_days": 365,
+      "total_revenue": 11949374.399999999,
+      "avg_daily_revenue": 32738.01205479455,
+      "max_daily_revenue": 57751.740000000005,
+      "min_daily_revenue": 7951.31
+    },
+    "category_analytics": {
+      "total_categories": 8,
+      "categories_by_revenue": [
+        {
+          "category": "Clothing",
+          "revenue": 1570564.4700000007,
+          "rank": 1
+        },
+        {
+          "category": "Food & Beverages",
+          "revenue": 1564096.600000002,
+          "rank": 2
+        },
+        {
+          "category": "Toys & Games",
+          "revenue": 1542487.2699999993,
+          "rank": 3
+        },
+        {
+          "category": "Books",
+          "revenue": 1528675.0299999984,
+          "rank": 4
+        },
+        {
+          "category": "Electronics",
+          "revenue": 1459243.83,
+          "rank": 5
+        },
+        {
+          "category": "Home & Garden",
+          "revenue": 1440314.4099999988,
+          "rank": 6
+        },
+        {
+          "category": "Beauty & Health",
+          "revenue": 1426714.749999999,
+          "rank": 7
+        },
+        {
+          "category": "Sports & Outdoors",
+          "revenue": 1417278.04,
+          "rank": 8
+        }
+      ]
+    },
+    "region_analytics": {
+      "total_regions": 5,
+      "regions_by_revenue": [
+        {
+          "region": "East",
+          "revenue": 2444931.9599999995,
+          "rank": 1
+        },
+        {
+          "region": "South",
+          "revenue": 2440849.2699999996,
+          "rank": 2
+        },
+        {
+          "region": "West",
+          "revenue": 2401583.9000000013,
+          "rank": 3
+        },
+        {
+          "region": "North",
+          "revenue": 2349629.4300000016,
+          "rank": 4
+        },
+        {
+          "region": "Central",
+          "revenue": 2312379.84,
+          "rank": 5
+        }
+      ]
+    }
+  }
+}
